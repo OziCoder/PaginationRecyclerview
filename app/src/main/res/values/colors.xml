@@ -8,4 +8,7 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="snack_red">#9a1736</color>
+    <color name="light_snack_red">#b85c72</color>
+    <color name="DarkGray">#A9A9A9</color>
+    <color name="LightGray">#EEEEEE</color>
 </resources>

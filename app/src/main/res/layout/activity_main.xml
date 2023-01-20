@@ -3,16 +3,24 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <data>
+        <variable
+            name="adapterChatracters"
+            type="com.vp.redspace.ui.CharacterAdapter" />
+    </data>
+
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
         <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerCharacters"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            app:adapter="@{adapterChatracters}"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             tools:itemCount="5"
-            tools:listitem="@layout/item_list_characters"
-            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"></androidx.recyclerview.widget.RecyclerView>
+            tools:listitem="@layout/item_list_characters"></androidx.recyclerview.widget.RecyclerView>
 
         <ProgressBar
             android:id="@+id/main_progress"

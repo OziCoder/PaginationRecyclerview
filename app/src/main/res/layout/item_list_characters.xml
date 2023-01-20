@@ -1,49 +1,80 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <LinearLayout
+    <data>
+
+        <variable
+            name="characters"
+            type="com.vp.redspace.models.Results" />
+    </data>
+
+    <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:orientation="horizontal">
+        android:layout_height="wrap_content">
 
-        <androidx.appcompat.widget.AppCompatImageView
-            android:id="@+id/img_char"
-            android:layout_width="@dimen/dp100"
-            android:layout_height="@dimen/dp100"
-            android:scaleType="center"></androidx.appcompat.widget.AppCompatImageView>
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardElevation="0.6dp"
+            app:cardCornerRadius="@dimen/dp5"
+            android:layout_margin="@dimen/dp2"
+            android:shadowColor="@color/DarkGray"
+            app:cardBackgroundColor="@color/LightGray">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:gravity="center"
+            android:orientation="horizontal">
 
-            <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/name"
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/img_char"
+                android:layout_width="@dimen/dp100"
+                android:layout_height="@dimen/dp100"
+                android:layout_marginLeft="@dimen/margin_standard_screen"
+                android:scaleType="center"></androidx.appcompat.widget.AppCompatImageView>
+
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="@dimen/margin_standard"></androidx.appcompat.widget.AppCompatTextView>
+                android:layout_marginLeft="@dimen/margin_standard"
+                android:orientation="vertical">
 
-            <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/status"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="@dimen/margin_standard"></androidx.appcompat.widget.AppCompatTextView>
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/margin_standard_screen"
+                    android:textColor="@color/black"
+                    android:text="@{@string/txt_name(characters.name)}"></androidx.appcompat.widget.AppCompatTextView>
 
-            <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/gender"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="@dimen/margin_standard"></androidx.appcompat.widget.AppCompatTextView>
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/status"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/margin_standard_screen"
+                    android:textColor="@color/black"
+                    android:text="@{@string/txt_status(characters.status)}"></androidx.appcompat.widget.AppCompatTextView>
 
-            <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/location"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="@dimen/margin_standard"></androidx.appcompat.widget.AppCompatTextView>
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/gender"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/margin_standard_screen"
+                    android:textColor="@color/black"
+                    android:text="@{@string/txt_gender(characters.gender)}"></androidx.appcompat.widget.AppCompatTextView>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/location"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:layout_margin="@dimen/margin_standard_screen"
+                    android:text="@{@string/txt_location(characters.location.name)}"></androidx.appcompat.widget.AppCompatTextView>
+            </LinearLayout>
         </LinearLayout>
-    </LinearLayout>
-
-</FrameLayout>
+        </androidx.cardview.widget.CardView>
+    </FrameLayout>
+</layout>
